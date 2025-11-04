@@ -1,16 +1,99 @@
-<!DOCTYPE html>
-
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inception — Movie Page</title>
+  <style>
+    :root{ --bg:#0f1724; --card:#0b1220; --accent:#7dd3fc; --muted:#9ca3af; color-scheme: dark; }
+    body{ font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:linear-gradient(180deg,#071021 0%, #081229 60%); color:#e6eef6; }
+    .container{ max-width:980px; margin:36px auto; padding:28px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px; box-shadow: 0 8px 30px rgba(2,6,23,0.7); }
+    header{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    header h1{ margin:0; font-size:28px; letter-spacing:0.6px; }
+    nav{ margin-top:10px; }
+    nav a{ text-decoration:none; color:var(--accent); margin-right:18px; font-weight:600; }
+    nav p{ display:inline-block; margin:0 12px 0 0; color:var(--muted); }
+    main{ display:grid; grid-template-columns: 1fr 280px; gap:20px; margin-top:20px; }
+    section, aside{ background:var(--card); padding:18px; border-radius:10px; }
+    section h2{ margin-top:0; }
+    #actor ul{ margin:8px 0 0 18px; }
+    footer{ margin-top:20px; padding:12px 18px; text-align:right; border-radius:8px; background:transparent; color:var(--muted); }
+    .poster{ width:100%; border-radius:8px; box-shadow: 0 6px 18px rgba(3,6,15,0.6); }
+    .meta{ font-size:14px; color:var(--muted); }
+    blockquote{ margin:12px 0; padding:12px 16px; border-left:4px solid var(--accent); background: linear-gradient(90deg, rgba(125,211,252,0.03), transparent); }
+    .btn{ display:inline-block; padding:8px 12px; border-radius:8px; background:rgba(125,211,252,0.06); border:1px solid rgba(125,211,252,0.12); color:var(--accent); text-decoration:none; }
+    @media (max-width:880px){ main{ grid-template-columns:1fr; } aside{ order:-1; }
+    }
+  </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Inception</h1>
+        <p class="meta">A sci-fi heist that explores dreams within dreams.</p>
+      </div>
+      <div>
+        <small class="meta">Genre: Science Fiction / Thriller</small>
+      </div>
+    </header>
 
+    <nav id="nav">
+      <p>Quick links:</p>
+      <!-- Navigation links must have ids nav-actor and nav-quote -->
+      <a id="nav-actor" href="#actor">Actors</a>
+      <a id="nav-quote" href="#quote">Favorite Quote</a>
+    </nav>
+
+    <!-- Summary must contain text -->
+    <section id="summary">
+      <h2>Summary</h2>
+      <p>
+        Dom Cobb is an extractor — a thief who enters the dreams of others to steal secrets from their subconscious. He is offered a chance to have his criminal history erased in exchange for planting an idea in someone’s mind: inception. Cobb assembles a team and navigates layered dreamscapes where reality, memory, and guilt blur, forcing him to confront his past.
+      </p>
+    </section>
+
+    <main>
+      <div>
+        <!-- Actor section required with id "actor" -->
+        <section id="actor">
+          <h2>Actors</h2>
+          <p>Key cast and the roles they play in the story:</p>
+          <ul>
+            <li><strong>Leonardo DiCaprio</strong> as Dom Cobb (the extractor and team leader)</li>
+            <li><strong>Joseph Gordon-Levitt</strong> as Arthur (Cobb’s point man)</li>
+            <li><strong>Elliot Page</strong> as Ariadne (the architect who designs the dream levels)</li>
+            <li><strong>Tom Hardy</strong> as Eames (a deceptive forger inside dreams)</li>
+            <li><strong>Ken Watanabe</strong> as Saito (the client who hires the team)</li>
+          </ul>
+          <p style="margin-top:12px;">Each actor brings a different energy to the team—from quiet precision to chaotic improvisation—making the ensemble feel like a functioning crew on a heist.</p>
+        </section>
+
+        <!-- Quote section required with id "quote" -->
+        <section id="quote">
+          <h2>Favorite Quote</h2>
+          <p>My favourite line that captures the film’s theme:</p>
+          <blockquote>
+            "You mustn’t be afraid to dream a little bigger, darling." — Eames
+          </blockquote>
+          <p>This playful line is delivered in a tense moment and highlights the audacity and craft behind the team's approach to bending reality.</p>
+        </section>
+      </div>
+
+      <!-- Aside must contain text with IMDb rating and release date -->
+      <aside>
+        <h3>Movie Info</h3>
+        <p><strong>IMDb rating:</strong> 8.8/10 (approximate — check IMDb for latest value)</p>
+        <p><strong>Release date:</strong> July 16, 2010 (U.S.)</p>
+        <img class="poster" src="https://m.media-amazon.com/images/I/51s+3qg8sNL._AC_.jpg" alt="Inception poster" />
+        <p style="margin-top:10px;">Runtime: 148 minutes</p>
+        <a class="btn" href="https://www.imdb.com/title/tt1375666/" target="_blank" rel="noopener">View on IMDb</a>
+      </aside>
+    </main>
+
+    <footer>
+      <p>Produced by: Christopher Nolan</p>
+    </footer>
+  </div>
 </body>
-
 </html>
